@@ -4,12 +4,8 @@ Exercicios Alura
 
 PROJETO:
 
-EXERCICIOS ALURA JAVA.LANG, UTIL e IO
-alura
+EXERCICIOS ALURA JAVA.LANG, UTIL e IO - alura
 
-EXERCICIOS MAVEN
-lojaweb
-produto
+EXERCICIOS MAVEN - lojaweb | produto
 
-EXERCICIOS SERVLETS
-gerenciador
+EXERCICIOS SERVLETS - gerenciador
