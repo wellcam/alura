@@ -8,11 +8,11 @@ public class Banco {
 	private static List<Empresa> listaEmpresas = new ArrayList<Empresa>();
 
 	public void adiciona(Empresa empresa) {
-		listaEmpresas.add(empresa);
+		Banco.listaEmpresas.add(empresa);
 	}
 
-	private List<Empresa> getEmpresas() {
-		return listaEmpresas;
+	public List<Empresa> getEmpresas() {
+		return Banco.listaEmpresas;
 	}
 	
 }
