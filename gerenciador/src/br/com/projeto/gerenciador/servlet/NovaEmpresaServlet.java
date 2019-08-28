@@ -1,7 +1,9 @@
 package br.com.projeto.gerenciador.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,14 +25,26 @@ public class NovaEmpresaServlet extends HttpServlet{
 		
 		Empresa empresa = new Empresa();
 		empresa.setNome(req.getParameter("nome"));
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
+		
+		
+		try {
+			Date dataAbertura = sdf.parse(req.getParameter("data"));
+			empresa.setDataAbertura(dataAbertura);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		
 		Banco banco = new Banco();
 		banco.adiciona(empresa);
 		
-		req.setAttribute("nomeEmpresa", req.getParameter("nome"));
+		req.setAttribute("nomeEmpresa", empresa.getNome());
+		req.setAttribute("dataAbertura", empresa.getDataAbertura());
 		
-		RequestDispatcher rd = req.getRequestDispatcher("/novaEmpresaCriada.jsp");
-		rd.forward(req, resp);
+		
+		resp.sendRedirect("listaEmpresas");
+//		RequestDispatcher rd = req.getRequestDispatcher("/listaEmpresas");
+//		rd.forward(req, resp);
 	}
 	
 }
