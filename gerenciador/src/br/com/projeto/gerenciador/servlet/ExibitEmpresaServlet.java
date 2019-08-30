@@ -9,10 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.projeto.gerenciador.modelo.Banco;
+import br.com.projeto.gerenciador.modelo.Empresa;
+
 /**
  * Servlet implementation class EditarEmpresaServlet
  */
-@WebServlet("/exibirEmpresa")
+//@WebServlet("/exibirEmpresa")
 public class ExibitEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

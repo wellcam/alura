@@ -1,27 +1,19 @@
-package br.com.projeto.gerenciador.servlet;
+package br.com.projeto.gerenciador.acao;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.projeto.gerenciador.modelo.Banco;
 import br.com.projeto.gerenciador.modelo.Empresa;
 
-/**
- * Servlet implementation class AlterarEmpresaServlet
- */
-//@WebServlet("/alterarEmpresa")
-public class AlterarEmpresaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class EditarEmpresa implements Acao {
+
+	public String executar(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		int id = Integer.parseInt(request.getParameter("id"));
 		String nome =  request.getParameter("nome");
@@ -41,7 +33,7 @@ public class AlterarEmpresaServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("listaEmpresas");
+		return "redirect:entrada?acao=ListarEmpresas";
 		
 	}
 

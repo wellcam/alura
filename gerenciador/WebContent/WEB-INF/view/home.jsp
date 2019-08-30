@@ -11,8 +11,7 @@
 <title>Home Gerenciador</title>
 </head>
 <body>
-<button type="button" value="Cadastrar Nova Empres" onclick="" />
-<button type="button" value="Cadastrar Nova Empres" onclick="window.location=${urlListaEmpresa}" />
-
+<a href="${urlFormNovaEmpresa }">Cadastrar Nova Empresa</a>
+<a href="${urlListaEmpresa}">Listar Empresas</a> 
 </body>
 </html>

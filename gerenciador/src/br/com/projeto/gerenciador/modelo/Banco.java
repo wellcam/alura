@@ -1,7 +1,5 @@
-package br.com.projeto.gerenciador.servlet;
+package br.com.projeto.gerenciador.modelo;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -10,6 +8,7 @@ import java.util.List;
 public class Banco {
 	
 	private static List<Empresa> listaEmpresas = new ArrayList<Empresa>();
+	private static List<Usuario> listaUsuarios = new ArrayList<Usuario>();
 	private static int chave = 1; 
 	
 	static {
@@ -20,9 +19,18 @@ public class Banco {
 		empresa2.setNome("Google");
 		empresa2.setDataAbertura(new Date());
 		
-		Banco banco = new Banco();
-		banco.adiciona(empresa);
-		banco.adiciona(empresa2);
+		Usuario usuario = new Usuario();
+		usuario.setLogin("well");
+		usuario.setSenha("12345");
+		Usuario usuario2 = new Usuario();
+		usuario2.setLogin("teste");
+		usuario2.setSenha("54321");
+		
+		listaEmpresas.add(empresa);
+		listaEmpresas.add(empresa2);
+		listaUsuarios.add(usuario);
+		listaUsuarios.add(usuario2);
+		
 		
 	}
 
@@ -59,6 +67,16 @@ public class Banco {
 		for(Empresa empresa : Banco.listaEmpresas) {
 			if (empresa.getId() == id) {
 				return empresa;
+			}
+		}
+		return null;
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+		
+		for (Usuario usuario : listaUsuarios) {
+			if(usuario.ehIgual(login, senha)) {
+				return usuario;
 			}
 		}
 		return null;

@@ -8,10 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.projeto.gerenciador.modelo.Banco;
+
 /**
  * Servlet implementation class RemoverEmpresaServlet
  */
-@WebServlet("/removerEmpresa")
+//@WebServlet("/removerEmpresa")
 public class RemoverEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
