@@ -27,16 +27,16 @@ public class EntradaServlet extends HttpServlet {
 		String fqn = PACKAGE_NAME + paramAcao;
 		String redirect = null;
 		
-		HttpSession sessao = request.getSession();
 		
-		boolean usuarioNaoLogado = (sessao.getAttribute("usuario") == null);
-		
-		boolean pageNeedLogon = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm")); 
-		
-		if(pageNeedLogon && usuarioNaoLogado) {
-			response.sendRedirect("entrada?acao=LoginForm");
-			return;
-		}
+//		Verificao se usuario está logado
+//		HttpSession sessao = request.getSession();
+//		boolean usuarioNaoLogado = (sessao.getAttribute("usuario") == null);
+//		boolean pageNeedLogon = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm")); 
+//		
+//		if(pageNeedLogon && usuarioNaoLogado) {
+//			response.sendRedirect("entrada?acao=LoginForm");
+//			return;
+//		}
 		
 		
 		try {
