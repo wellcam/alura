@@ -5,6 +5,4 @@ Exercicios Alura
 
 -Exercicios Maven: lojaweb | produtos
 
--Exercicios Servlets 1: gerenciador
-
--Exercicios Servlets 2:
+-Exercicios Servlets 1 e 2: gerenciador
