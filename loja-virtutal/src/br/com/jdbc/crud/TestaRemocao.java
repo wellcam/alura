@@ -11,7 +11,7 @@ public class TestaRemocao {
 	public static void main(String[] args) throws SQLException {
 		
 		
-		Connection connection = Database.getConnection();
+		Connection connection = Database().getConnection();
 		Statement statement = connection.createStatement();
 		statement.executeUpdate("delete from Produto where id>4");
 		int updateCount = statement.getUpdateCount();
