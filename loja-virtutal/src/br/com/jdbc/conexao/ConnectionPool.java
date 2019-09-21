@@ -1,20 +1,21 @@
 package br.com.jdbc.conexao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
 import org.hsqldb.jdbc.JDBCPool;
 
-public class Database {
+public class ConnectionPool {
 	
 	static final String URL_DB = "jdbc:hsqldb:hsql://localhost/loja-virtual";
 	static final String USER_DB = "SA";
 	static final String PASSWORD_DB = "";
 	private DataSource dataSource;
 	
-	public Database() {
+	public ConnectionPool() {
 		//Criar pool de conexoes, JDBCPool é exclusivo do HSQLDB
 		JDBCPool pool = new JDBCPool();
 		pool.setUrl(URL_DB);

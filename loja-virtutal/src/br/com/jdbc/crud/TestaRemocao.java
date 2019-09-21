@@ -4,14 +4,14 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import br.com.jdbc.conexao.Database;
+import br.com.jdbc.conexao.ConnectionPool;
 
 public class TestaRemocao {
 	
 	public static void main(String[] args) throws SQLException {
 		
 		
-		Connection connection = Database().getConnection();
+		Connection connection = new ConnectionPool().getConnection();
 		Statement statement = connection.createStatement();
 		statement.executeUpdate("delete from Produto where id>4");
 		int updateCount = statement.getUpdateCount();

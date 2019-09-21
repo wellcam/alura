@@ -5,12 +5,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import br.com.jdbc.conexao.Database;
+import br.com.jdbc.conexao.ConnectionPool;
 
 public class TestaListagem {
 	
 	public static void main(String[] args) throws SQLException {
-		Connection connection = new Database().getConnection();
+		Connection connection = new ConnectionPool().getConnection();
 		Statement statement = connection.createStatement();
 		boolean resultado = statement.execute("select * from Produto");
 		ResultSet resultSet = statement.getResultSet();
