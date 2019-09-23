@@ -13,11 +13,13 @@ public class TesteProdutoDAO {
 	public static void main(String[] args) throws SQLException {
 		ConnectionPool database = new ConnectionPool();
 
-		Produto produto = new Produto("Copo", "Copo personalizado");
+		Produto produto = new Produto("Bola de Basket", "Bola Nike NBA");
 
 		try (Connection connection = database.getConnection()) {
 			ProdutoDAO dao = new ProdutoDAO(connection);
+			
 			dao.salvar(produto);
+			
 			List<Produto> produtos = dao.listar();
 			for (Produto p : produtos) {
 				System.out.println("Produtos --> " + p);
