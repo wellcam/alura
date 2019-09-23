@@ -18,11 +18,11 @@ public class TesteProdutoDAO {
 		try (Connection connection = database.getConnection()) {
 			ProdutoDAO dao = new ProdutoDAO(connection);
 			
-			dao.salvar(produto);
+//			dao.salvar(produto);
 			
 			List<Produto> produtos = dao.listar();
 			for (Produto p : produtos) {
-				System.out.println("Produtos --> " + p);
+				System.out.println("Produto --> " + p);
 			}
 		}
 	}
