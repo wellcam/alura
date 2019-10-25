@@ -12,7 +12,7 @@ import br.com.hibernatejpa.financas.modelo.Movimentacao;
 import br.com.hibernatejpa.financas.modelo.TipoMovimentacao;
 import br.com.hibernatejpa.financas.util.JPAUtil;
 
-public class TesteMovimentacaoComCategoria {
+public class PopulaMovimentacaoComCategoria {
 
 	public static void main(String[] args) {
 		
@@ -51,29 +51,31 @@ public class TesteMovimentacaoComCategoria {
 		movimentacao1.setValor(new BigDecimal(234));
 		movimentacao1.setCategoria(Arrays.asList(categoria3));
 		
-		Movimentacao movimentacao2 = new Movimentacao();
-		movimentacao2.setConta(conta2);
-		movimentacao2.setData(Calendar.getInstance());
-		movimentacao2.setDescricao("Saláro Mês Agosto");
-		movimentacao2.setTipo(TipoMovimentacao.ENTRADA);
-		movimentacao2.setValor(new BigDecimal(9874));
-		movimentacao2.setCategoria(Arrays.asList(categoria4));
+//		Calendar amanha = Calendar.getInstance();
+//		amanha.add(Calendar.DAY_OF_MONTH, 1);
+//		Movimentacao movimentacao2 = new Movimentacao();
+//		movimentacao2.setConta(conta2);
+//		movimentacao2.setData(amanha);
+//		movimentacao2.setDescricao("Saláro Mês Agosto");
+//		movimentacao2.setTipo(TipoMovimentacao.ENTRADA);
+//		movimentacao2.setValor(new BigDecimal(9874));
+//		movimentacao2.setCategoria(Arrays.asList(categoria4));
 		
-		Movimentacao movimentacao3 = new Movimentacao();
-		movimentacao3.setConta(conta3);
-		movimentacao3.setData(Calendar.getInstance());
-		movimentacao3.setDescricao("Pagamento de Aluguel");
-		movimentacao3.setTipo(TipoMovimentacao.ENTRADA);
-		movimentacao3.setValor(new BigDecimal(123322));
-		movimentacao3.setCategoria(Arrays.asList(categoria1));
-		
-		Movimentacao movimentacao4 = new Movimentacao();
-		movimentacao4.setConta(conta4);
-		movimentacao4.setData(Calendar.getInstance());
-		movimentacao4.setDescricao("Saláro Mês Dezembro");
-		movimentacao4.setTipo(TipoMovimentacao.ENTRADA);
-		movimentacao4.setValor(new BigDecimal(123123));
-		movimentacao4.setCategoria(Arrays.asList(categoria2));
+//		Movimentacao movimentacao3 = new Movimentacao();
+//		movimentacao3.setConta(conta3);
+//		movimentacao3.setData(Calendar.getInstance());
+//		movimentacao3.setDescricao("Pagamento de Aluguel");
+//		movimentacao3.setTipo(TipoMovimentacao.ENTRADA);
+//		movimentacao3.setValor(new BigDecimal(123322));
+//		movimentacao3.setCategoria(Arrays.asList(categoria1));
+//		
+//		Movimentacao movimentacao4 = new Movimentacao();
+//		movimentacao4.setConta(conta4);
+//		movimentacao4.setData(Calendar.getInstance());
+//		movimentacao4.setDescricao("Saláro Mês Dezembro");
+//		movimentacao4.setTipo(TipoMovimentacao.ENTRADA);
+//		movimentacao4.setValor(new BigDecimal(123123));
+//		movimentacao4.setCategoria(Arrays.asList(categoria2));
 		
 		EntityManager em = new JPAUtil().getEntityManager();
 		em.getTransaction().begin();
@@ -84,9 +86,9 @@ public class TesteMovimentacaoComCategoria {
 //		em.persist(categoria3);
 		
 		em.persist(movimentacao1);
-		em.persist(movimentacao2);
-		em.persist(movimentacao3);
-		em.persist(movimentacao4);
+//		em.persist(movimentacao2);
+//		em.persist(movimentacao3);
+//		em.persist(movimentacao4);
 		
 		em.getTransaction().commit();
 		em.close();

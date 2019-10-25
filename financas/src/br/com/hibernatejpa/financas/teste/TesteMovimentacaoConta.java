@@ -13,11 +13,12 @@ public class TesteMovimentacaoConta {
 		EntityManager em = new JPAUtil().getEntityManager();
 		em.getTransaction().begin();
 		
-		Movimentacao movimentacao = em.find(Movimentacao.class, 1);
+		Movimentacao movimentacao = em.find(Movimentacao.class, 2);
 		Conta conta = movimentacao.getConta();
 		
 		System.out.println("Titular: " + conta.getTitular());
 		
+		System.out.println(conta.getMovimentacoes().size());
 		
 		em.getTransaction().commit();
 		em.close();

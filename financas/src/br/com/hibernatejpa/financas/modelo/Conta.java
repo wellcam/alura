@@ -1,9 +1,12 @@
 package br.com.hibernatejpa.financas.modelo;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Conta {
@@ -14,6 +17,9 @@ public class Conta {
 	private String titular;
 	private String numero;
 	private String banco;
+	
+	@OneToMany
+	private List<Movimentacao> movimentacoes;
 	
 	public Integer getId() {
 		return id;
@@ -46,5 +52,10 @@ public class Conta {
 		this.agencia = agencia;
 	}
 	private String agencia;
+
+	public List<Movimentacao> getMovimentacoes() {
+		// TODO Auto-generated method stub
+		return this.movimentacoes;
+	}
 	
 }

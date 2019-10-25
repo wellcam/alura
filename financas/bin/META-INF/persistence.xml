@@ -10,6 +10,8 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 <!-- 	Lista de todas as entidades -->
 		<class>br.com.hibernatejpa.financas.modelo.Conta</class>
 		<class>br.com.hibernatejpa.financas.modelo.Movimentacao</class>
+		<class>br.com.hibernatejpa.financas.modelo.Categoria</class>
+		<class>br.com.hibernatejpa.financas.modelo.Cliente</class>
 		<properties>
 <!-- 		Propriedas JDBC - Configuração do banco -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
