@@ -1,4 +1,4 @@
-package br.com.bancobrasil.controller;
+package br.com.bancobrasil.action;
 
 import java.io.IOException;
 
@@ -11,16 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.bancobrasil.dao.ClienteDAO;
 import br.com.bancobrasil.model.Cliente;
 
-/**
- * Servlet implementation class HomeController
- */
-@WebServlet("/addCliente")
-public class AdicionarCliente extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class AdicionarCliente implements Action {
 
-
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	@Override
+	public String executar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		ClienteDAO clienteDao = new ClienteDAO();
 		Cliente cliente = new Cliente();
 		
@@ -33,8 +28,7 @@ public class AdicionarCliente extends HttpServlet {
 
 		System.out.println(cliente.getNome());
 		
-		response.sendRedirect("cadastroCliente.jsp");
-
+		return "redirect:/bancobrasil/in?acao=FormCliente";
 	}
 
 }

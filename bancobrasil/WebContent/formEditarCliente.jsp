@@ -7,12 +7,12 @@
 <title>Atualizar Cliente</title>
 </head>
 <body>
-<a href="home.jsp">Home</a>
+<a href="/bancobrasil/in?acao=Home">Home</a>
 <h2>Atualizar Cliente</h2>
-<a href="/bancobrasil/listarClientes">Lista de Clientes</a>
+<a href="/bancobrasil/in?acao=ListarClientes">Lista de Clientes</a>
 <br>
 ${cliente.id}
-<form action="/bancobrasil/salvarCliente" method="post">
+<form action="/bancobrasil/in?acao=SalvarCliente" method="post">
 	<table>
 		<tr><td>Nome:</td><td><input type="text" name="nome" value="${cliente.nome}"></td></tr>
 		<tr><td>Profissão:</td><td><input type="text" name="profissao" value="${cliente.profissao}"></td></tr>

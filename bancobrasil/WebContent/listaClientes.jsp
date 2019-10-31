@@ -10,14 +10,14 @@
 <title>Lista Clientes</title>
 </head>
 <body>
-<a href="home.jsp">Home</a>
+<a href="/bancobrasil/in?acao=Home">Home</a>
 <h2>Lista de Clientes</h2>
 <table>
 	<c:forEach items="${clientes}" var="cliente">
 		<tr>
 			<td>Nome: ${cliente.nome}</td><td>Idade: ${cliente.idade}</td>
-			<td><a href="/bancobrasil/editarCliente?id=${cliente.id}">Editar</a></td>
-			<td><a href="/bancobrasil/excluirCliente?id=${cliente.id}">Excluir</a></td>
+			<td><a href="/bancobrasil/in?acao=EditarCliente?id=${cliente.id}">Editar</a></td>
+			<td><a href="/bancobrasil/in?acao=ExcluirCliente?id=${cliente.id}">Excluir</a></td>
 		</tr>
 	</c:forEach>
 </table>

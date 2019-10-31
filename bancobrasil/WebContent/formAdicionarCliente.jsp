@@ -7,11 +7,11 @@
 <title>Cadastro de Cleintee</title>
 </head>
 <body>
-<a href="home.jsp">Home</a>
+<a href="/bancobrasil/in?acao=Home">Home</a>
 <h2>Cadastro de Cliente</h2>
-<a href="/bancobrasil/listarClientes">Lista de Clientes</a>
+<a href="/bancobrasil/in?acao=ListarClientes">Lista de Clientes</a>
 <br>
-<form action="/bancobrasil/addCliente" method="post">
+<form action="/bancobrasil/in?acao=AdicionarCliente" method="post">
 	<table>
 		<tr><td>Nome:</td><td><input type="text" name="nome"></td></tr>
 		<tr><td>Profissão:</td><td><input type="text" name="profissao"></td></tr>

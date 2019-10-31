@@ -1,4 +1,4 @@
-package br.com.bancobrasil.controller;
+package br.com.bancobrasil.action;
 
 import java.io.IOException;
 
@@ -12,14 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.bancobrasil.dao.ClienteDAO;
 import br.com.bancobrasil.model.Cliente;
 
-/**
- * Servlet implementation class EditarCliente
- */
-@WebServlet("/editarCliente")
-public class EditarCliente extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class EditarCliente implements Action{
+	@Override
+	public String executar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		ClienteDAO clienteDao = new ClienteDAO();
 		
 		Integer id = Integer.parseInt(request.getParameter("id"));
@@ -28,9 +24,7 @@ public class EditarCliente extends HttpServlet {
 		
 		request.setAttribute("cliente", cliente);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("atualizarCliente.jsp");
-		rd.forward(request, response);
-		
+		return "forward:atualizarCliente.jsp";
 	}
 
 }

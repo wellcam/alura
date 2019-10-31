@@ -9,8 +9,8 @@
 <body>
 <h2>Home</h2>
 <br>
-<h3><a href="cadastroCliente.jsp">Cadastro de Cliente</a></h3>
-<h3><a href="/bancobrasil/listarClientes">Lista de Clientes</a></h3>
+<h3><a href="/bancobrasil/in?acao=FormCliente">Cadastro de Cliente</a></h3>
+<h3><a href="/bancobrasil/in?acao=ListarClientes">Lista de Clientes</a></h3>
 
 </body>
 </html>

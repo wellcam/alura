@@ -1,4 +1,4 @@
-package br.com.bancobrasil.controller;
+package br.com.bancobrasil.action;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,22 +13,19 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.bancobrasil.dao.ClienteDAO;
 import br.com.bancobrasil.model.Cliente;
 
-/**
- * Servlet implementation class ListarClientes
- */
-@WebServlet("/listarClientes")
-public class ListarClientes extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class ListarClientes implements Action{
+
+	@Override
+	public String executar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 		ClienteDAO clienteDao = new ClienteDAO();
 		
 		List<Cliente> clientes = clienteDao.listar();
 		
 		request.setAttribute("clientes", clientes);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("listaClientes.jsp");
-		rd.forward(request, response);
+		return "forward:listaClientes.jsp";
 	}
 
 }

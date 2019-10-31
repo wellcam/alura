@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Cliente {
@@ -16,6 +18,18 @@ public class Cliente {
 	private String dataNascimento;
 	private Integer idade;
 	
+	@JoinColumn(unique = true)
+	@OneToOne
+	private Usuario usuario;
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	public Integer getId() {
 		return id;
 	}

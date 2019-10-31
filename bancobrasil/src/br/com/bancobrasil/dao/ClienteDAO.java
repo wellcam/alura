@@ -10,7 +10,7 @@ import br.com.bancobrasil.model.Cliente;
 
 public class ClienteDAO {
 	
-	EntityManager em = new JPAUtil().getConnection();
+	private EntityManager em = new JPAUtil().getConnection();
 
 	public void adicionar(Cliente cliente) {
 
