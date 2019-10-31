@@ -29,7 +29,7 @@ public class AdicionarCliente extends HttpServlet {
 		cliente.setDataNascimento(request.getParameter("dataNascimento"));
 		cliente.setProfissao(request.getParameter("profissao"));
 		
-		clienteDao.salvar(cliente);
+		clienteDao.adicionar(cliente);
 
 		System.out.println(cliente.getNome());
 		

@@ -1,9 +1,7 @@
 package br.com.bancobrasil.controller;
 
 import java.io.IOException;
-import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,24 +9,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.bancobrasil.dao.ClienteDAO;
-import br.com.bancobrasil.model.Cliente;
 
 /**
- * Servlet implementation class ListarClientes
+ * Servlet implementation class ExcluirCliente
  */
-@WebServlet("/listarClientes")
-public class ListarClientes extends HttpServlet {
+@WebServlet("/excluirCliente")
+public class ExcluirCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ClienteDAO clienteDao = new ClienteDAO();
 		
-		List<Cliente> clientes = clienteDao.listar();
+		Integer id = Integer.parseInt(request.getParameter("id"));
 		
-		request.setAttribute("clientes", clientes);
+		clienteDao.excluir(id);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("listaClientes.jsp");
-		rd.forward(request, response);
+		response.sendRedirect("/bancobrasil/listarClientes");
+		
 	}
 
 }

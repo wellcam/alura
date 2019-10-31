@@ -7,9 +7,9 @@
 <title>Cadastro de Cleintee</title>
 </head>
 <body>
-
+<a href="home.jsp">Home</a>
 <h2>Cadastro de Cliente</h2>
-<a href="listaClientes.jsp">Lista de Clientes</a>
+<a href="/bancobrasil/listarClientes">Lista de Clientes</a>
 <br>
 <form action="/bancobrasil/addCliente" method="post">
 	<table>
