@@ -11,6 +11,7 @@
 <h2>Atualizar Cliente</h2>
 <a href="/bancobrasil/listarClientes">Lista de Clientes</a>
 <br>
+${cliente.id}
 <form action="/bancobrasil/salvarCliente" method="post">
 	<table>
 		<tr><td>Nome:</td><td><input type="text" name="nome" value="${cliente.nome}"></td></tr>
@@ -20,6 +21,7 @@
 		
 		<tr><td><input type="submit" value="Atualizar"></td></tr>
 	</table>
+	<input type="hidden" value="${cliente.id}" name="id">
 </form>
 </body>
 </html>

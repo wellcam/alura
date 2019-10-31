@@ -2,7 +2,6 @@ package br.com.bancobrasil.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +22,7 @@ public class SalvarCliente extends HttpServlet {
 		ClienteDAO clienteDao = new ClienteDAO();
 		Cliente cliente = new Cliente();
 		
+		cliente.setId(Integer.parseInt(request.getParameter("id")));
 		cliente.setNome(request.getParameter("nome"));
 		cliente.setIdade(Integer.parseInt(request.getParameter("idade")));
 		cliente.setDataNascimento(request.getParameter("dataNascimento"));
@@ -30,7 +30,8 @@ public class SalvarCliente extends HttpServlet {
 		
 		clienteDao.salvar(cliente);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/bancobrasil/listarClientes");
+		response.sendRedirect("/bancobrasil/listarClientes");
+		
 		
 	}
 
