@@ -7,6 +7,10 @@
 <title>Atualizar Cliente</title>
 </head>
 <body>
+<table>
+	<tr><td>Logado:</td><td>${usuario.login}</td>
+	<td><a href="/bancobrasil/in?acao=Logout">Sair</a></td></tr>
+</table>
 <a href="/bancobrasil/in?acao=Home">Home</a>
 <h2>Atualizar Cliente</h2>
 <a href="/bancobrasil/in?acao=ListarClientes">Lista de Clientes</a>

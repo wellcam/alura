@@ -9,9 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.bancobrasil.dao.ClienteDAO;
 import br.com.bancobrasil.model.Cliente;
+import br.com.bancobrasil.model.Usuario;
 
 public class ListarClientes implements Action{
 
@@ -20,8 +22,11 @@ public class ListarClientes implements Action{
 			throws ServletException, IOException {
 		
 		ClienteDAO clienteDao = new ClienteDAO();
+		HttpSession sessao = request.getSession();
 		
-		List<Cliente> clientes = clienteDao.listar();
+		Usuario usuario = (Usuario) sessao.getAttribute("usuario");
+		
+		List<Cliente> clientes = clienteDao.listar(usuario);
 		
 		request.setAttribute("clientes", clientes);
 		

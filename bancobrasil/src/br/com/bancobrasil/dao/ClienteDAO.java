@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 
 import br.com.bancobrasil.conexao.JPAUtil;
 import br.com.bancobrasil.model.Cliente;
+import br.com.bancobrasil.model.Usuario;
 
 public class ClienteDAO {
 	
@@ -21,11 +22,12 @@ public class ClienteDAO {
 		
 	}
 
-	public List<Cliente> listar() {
-		String jpql = "SELECT c FROM Cliente c";
+	public List<Cliente> listar(Usuario usuario) {
+		String jpql = "SELECT c FROM Cliente c WHERE c.usuario = :pUsuario";
 		em.getTransaction().begin();
 		
 		Query query = em.createQuery(jpql);
+		query.setParameter("pUsuario", usuario);
 		
 		return query.getResultList();
 	}

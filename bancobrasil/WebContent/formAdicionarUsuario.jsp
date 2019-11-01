@@ -7,8 +7,9 @@
 <title>Cadastro de Usuário</title>
 </head>
 <body>
-<a href="/bancobrasil/in?acao=Home">Home</a>
-<form action="/bancobrasil/in?action=adicionarUsuario" method="post">
+<a href="/bancobrasil/in?acao=Login">Login</a>
+<h2>Cadastro de Usuário</h2>
+<form action="/bancobrasil/in?acao=AdicionarUsuario" method="post">
 	<table>
 		<tr><td>Nome:</td><td><input type="text" name="nome"></td></tr>
 		<tr><td>Empresa:</td><td><input type="text" name="empresa"></td></tr>

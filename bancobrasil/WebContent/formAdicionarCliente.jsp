@@ -7,6 +7,10 @@
 <title>Cadastro de Cleintee</title>
 </head>
 <body>
+<table>
+	<tr><td>Logado:</td><td>${usuario.login}</td>
+	<td><a href="/bancobrasil/in?acao=Logout">Sair</a></td></tr>
+</table>
 <a href="/bancobrasil/in?acao=Home">Home</a>
 <h2>Cadastro de Cliente</h2>
 <a href="/bancobrasil/in?acao=ListarClientes">Lista de Clientes</a>
@@ -18,7 +22,7 @@
 		<tr><td>Data de nascimento:</td><td><input type="text" name="dataNascimento"></td></tr>
 		<tr><td>Idade:</td><td><input type="text" name="idade"></td></tr>
 		
-		<tr><td><input type="submit" value="Enviar"></td></tr>
+		<tr><td><input type="submit" value="Cadastrar"></td></tr>
 	</table>
 </form>
 </body>

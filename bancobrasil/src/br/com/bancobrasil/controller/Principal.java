@@ -22,7 +22,6 @@ public class Principal extends HttpServlet {
 		final String PACKAGE_NAME = "br.com.bancobrasil.action.";
 		String parametroAcao = request.getParameter("acao");
 		final String fqn = PACKAGE_NAME + parametroAcao;
-		System.out.println(parametroAcao+" : Principal");
 		String redirect = null;
 		
 		try {
@@ -32,7 +31,6 @@ public class Principal extends HttpServlet {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(redirect);
 		String [] prefix = redirect.split(":");
 		
 		if(prefix[0].equals("forward")) {

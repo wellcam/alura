@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Cliente {
@@ -18,8 +18,7 @@ public class Cliente {
 	private String dataNascimento;
 	private Integer idade;
 	
-	@JoinColumn(unique = true)
-	@OneToOne
+	@ManyToOne
 	private Usuario usuario;
 	
 	public Usuario getUsuario() {

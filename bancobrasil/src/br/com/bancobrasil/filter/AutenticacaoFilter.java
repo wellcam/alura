@@ -31,10 +31,9 @@ public class AutenticacaoFilter implements Filter{
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
 		
 		String acao = request.getParameter("acao");
-		System.out.println(acao);
 		HttpSession sessao = request.getSession();
 		boolean usuarioNaoLogado = (sessao.getAttribute("usuario") == null);
-		boolean pageNeedLogon = !(acao.equals("Login") || acao.equals("FormLogin")); 
+		boolean pageNeedLogon = !(acao.equals("Login") || acao.equals("FormLogin") || acao.equals("FormUsuario") || acao.equals("AdicionarUsuario")); 
 		
 		if(pageNeedLogon && usuarioNaoLogado) {
 			response.sendRedirect("/bancobrasil/in?acao=FormLogin");

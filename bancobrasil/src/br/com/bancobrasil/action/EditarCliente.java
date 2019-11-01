@@ -24,7 +24,7 @@ public class EditarCliente implements Action{
 		
 		request.setAttribute("cliente", cliente);
 		
-		return "forward:atualizarCliente.jsp";
+		return "forward:formEditarCliente.jsp";
 	}
 
 }
