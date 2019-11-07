@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.bancobrasil.dao.ClienteDAO;
+import br.com.bancobrasil.dao.impl.ClienteDAO;
 
 public class ExcluirCliente implements Action{
 

@@ -10,6 +10,8 @@
 <!-- 	Lista de todas as entidades -->
 		<class>br.com.bancobrasil.model.Usuario</class>
 		<class>br.com.bancobrasil.model.Cliente</class>
+		<class>br.com.bancobrasil.model.Profissao</class>
+		<class>br.com.bancobrasil.model.CategoriaProfissao</class>
 		<properties>
 <!-- 		Propriedas JDBC - Configuração do banco -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

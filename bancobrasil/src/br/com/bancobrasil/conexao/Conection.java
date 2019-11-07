@@ -21,7 +21,7 @@ public class Conection {
 		cliente.setNome("Wellington Camilo");
 		cliente.setIdade(23);
 		cliente.setDataNascimento("26/12/1995");
-		cliente.setProfissao("Programador");
+//		cliente.setProfissao("Programador");
 		
 		
 		em.getTransaction().begin();

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.bancobrasil.dao.UsuarioDAO;
+import br.com.bancobrasil.dao.impl.UsuarioDAO;
 import br.com.bancobrasil.model.Usuario;
 
 public class Login implements Action {

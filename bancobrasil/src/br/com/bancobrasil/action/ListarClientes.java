@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.bancobrasil.dao.ClienteDAO;
+import br.com.bancobrasil.dao.impl.ClienteDAO;
 import br.com.bancobrasil.model.Cliente;
 import br.com.bancobrasil.model.Usuario;
 

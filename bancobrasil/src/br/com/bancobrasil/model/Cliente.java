@@ -14,9 +14,11 @@ public class Cliente {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private String profissao;
 	private String dataNascimento;
 	private Integer idade;
+
+	@ManyToOne
+	private Profissao profissao;
 	
 	@ManyToOne
 	private Usuario usuario;
@@ -45,14 +47,14 @@ public class Cliente {
 		this.nome = nome;
 	}
 	
-	public String getProfissao() {
+	public Profissao getProfissao() {
 		return profissao;
 	}
-	
-	public void setProfissao(String profissao) {
+
+	public void setProfissao(Profissao profissao) {
 		this.profissao = profissao;
 	}
-	
+
 	public String getDataNascimento() {
 		return dataNascimento;
 	}

@@ -13,9 +13,16 @@
 	<td><a href="/bancobrasil/in?acao=Logout">Sair</a></td></tr>
 </table>
 <h2>Home</h2>
-<br>
-<h3><a href="/bancobrasil/in?acao=FormCliente">Cadastro de Cliente</a></h3>
-<h3><a href="/bancobrasil/in?acao=ListarClientes">Lista de Clientes</a></h3>
+
+<h2>CLIENTE</h2>
+<p><a href="/bancobrasil/in?acao=FormCliente">Cadastro de Clientes</a>
+<p><a href="/bancobrasil/in?acao=ListarClientes">Lista de Clientes</a>
+<h2>CATEGORIAS</h2>
+<p><a href="/bancobrasil/in?acao=FormCategoria">Cadastro de Categorias</a>
+<p><a href="/bancobrasil/in?acao=ListarCategorias">Lista de Categorias</a>
+<h2>PROFISSOES</h2>
+<p><a href="/bancobrasil/in?acao=FormProfissao">Cadastro de Profissoes</a>
+<p><a href="/bancobrasil/in?acao=ListarProfissoes">Lista de Profissoes</a>
 
 </body>
 </html>
