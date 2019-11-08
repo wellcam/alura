@@ -17,6 +17,7 @@ public class FormCliente implements Action {
 			throws ServletException, IOException {
 		ProfissaoDAO profissaoDao = new ProfissaoDAO();
 		List<Profissao> profissoes = profissaoDao.listar();
+		
 		request.setAttribute("profissoes", profissoes);
 		
 		return "forward:formAdicionarCliente.jsp";

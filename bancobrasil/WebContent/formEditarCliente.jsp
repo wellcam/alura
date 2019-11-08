@@ -28,8 +28,7 @@ ${cliente.id}
 			    </c:forEach>
 			</select>
 		</td></tr>
-		<tr><td>Data de nascimento:</td><td><input type="text" name="dataNascimento" value="${cliente.dataNascimento}"></td></tr>
-		<tr><td>Idade:</td><td><input type="text" name="idade" value="${cliente.idade}"></td></tr>
+<%-- 		<tr><td>Data de nascimento:</td><td><input type="text" name="dataNascimento" value="${cliente.dataNascimento}"></td></tr> --%>
 		
 		<tr><td><input type="submit" value="Atualizar"></td></tr>
 	</table>

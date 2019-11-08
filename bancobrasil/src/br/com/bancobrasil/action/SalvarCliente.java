@@ -30,10 +30,8 @@ public class SalvarCliente implements Action {
 		Profissao profissao = profissaoDao.buscarPorId(idProfissao);
 				
 		cliente.setUsuario(usuario);
-		cliente.setId(Integer.parseInt(request.getParameter("id")));
 		cliente.setNome(request.getParameter("nome"));
-		cliente.setIdade(Integer.parseInt(request.getParameter("idade")));
-		cliente.setDataNascimento(request.getParameter("dataNascimento"));
+//		cliente.setDataNascimento(request.getParameter("dataNascimento"));
 		cliente.setProfissao(profissao);
 		
 		clienteDao.salvar(cliente);

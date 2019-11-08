@@ -55,7 +55,6 @@ public class ClienteDAO {
 		Cliente editar = em.find(Cliente.class, cliente.getId());
 		
 		editar.setNome(cliente.getNome());
-		editar.setIdade(cliente.getIdade());
 		editar.setProfissao(cliente.getProfissao());
 		editar.setDataNascimento(cliente.getDataNascimento());
 		

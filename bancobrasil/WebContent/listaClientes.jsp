@@ -1,32 +1,62 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="br.com.bancobrasil.model.Cliente"%>
-
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Lista Clientes</title>
+  <meta charset="utf-8">
+  <title>Banco Brasil | Lista de Clientes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
 </head>
+
 <body>
-<table>
-	<tr><td>Logado: ${usuario.login}</td>
-	<td><a href="/bancobrasil/in?acao=Logout">Sair</a></td></tr>
-	<tr><td><a href="/bancobrasil/in?acao=Home">Home</a></td></tr>
-	<tr><td><a href="/bancobrasil/in?acao=FormCliente">Cadastrar Novo Cliente</a></td></tr>
-</table>
-<h2>Lista de Clientes</h2>
-<table>
-	<c:forEach items="${clientes}" var="cliente">
-		<tr>
-			<td>Nome: ${cliente.nome}</td>
-			<td>Idade: ${cliente.idade}</td>
-			<td>Profissao: ${cliente.profissao.nome}</td>
-			<td><a href="/bancobrasil/in?acao=EditarCliente&id=${cliente.id}">Editar</a></td>
-			<td><a href="/bancobrasil/in?acao=ExcluirCliente&id=${cliente.id}">Excluir</a></td>
-		</tr>
-	</c:forEach>
-</table>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="mb-4" >Lista de Clientes</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead class="thead-dark">
+                <tr>
+                  <th>#</th>
+                  <th>Nome</th>
+                  <th>Profissão</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              	<c:forEach items="${clientes}" var="cliente">
+					<tr>
+						<th>1</th>
+						<td>${cliente.nome}</td>
+						<td>${cliente.profissao.nome}</td>
+						<td><a class="btn text-white" href="/bancobrasil/in?acao=EditarCliente&id=${cliente.id}" style="background:#3b5998" target="_blank" >Editar</a>
+						<a class="btn text-white" href="/bancobrasil/in?acao=ExcluirCliente&id=${cliente.id}" style="background:#cc2127" target="_blank" >Excluir</a></td>
+					</tr>
+				</c:forEach>
+              </tbody>
+            </table>
+            <div class="form-group"></div><a href="/bancobrasil/in?acao=Home"> Voltar para Home</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
 </html>

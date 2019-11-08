@@ -1,6 +1,8 @@
 package br.com.bancobrasil.action;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -27,11 +29,16 @@ public class AdicionarCliente implements Action {
 		Usuario usuario = (Usuario) sessao.getAttribute("usuario");
 		Integer idProfissao = Integer.parseInt(request.getParameter("profissao"));
 		Profissao profissao = profissaoDao.buscarPorId(idProfissao);
+		
+		Integer dia = Integer.parseInt(request.getParameter("dia"));
+		Integer mes = Integer.parseInt(request.getParameter("mes"));
+		Integer ano = Integer.parseInt(request.getParameter("ano"));
+		
+//		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 				
 		cliente.setUsuario(usuario);
 		cliente.setNome(request.getParameter("nome"));
-		cliente.setIdade(Integer.parseInt(request.getParameter("idade")));
-		cliente.setDataNascimento(request.getParameter("dataNascimento"));
+		cliente.setDataNascimento(new GregorianCalendar(ano,mes,dia));
 		cliente.setProfissao(profissao);
 		
 		clienteDao.adicionar(cliente);

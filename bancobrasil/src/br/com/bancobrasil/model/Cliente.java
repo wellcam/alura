@@ -1,11 +1,14 @@
 package br.com.bancobrasil.model;
 
+import java.util.Calendar;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Cliente {
@@ -14,8 +17,9 @@ public class Cliente {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private String dataNascimento;
-	private Integer idade;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Calendar dataNascimento;
 
 	@ManyToOne
 	private Profissao profissao;
@@ -55,19 +59,11 @@ public class Cliente {
 		this.profissao = profissao;
 	}
 
-	public String getDataNascimento() {
+	public Calendar getDataNascimento() {
 		return dataNascimento;
 	}
-	
-	public void setDataNascimento(String dataNascimento) {
+
+	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}
-	
-	public Integer getIdade() {
-		return idade;
-	}
-	
-	public void setIdade(Integer idade) {
-		this.idade = idade;
 	}
 }
