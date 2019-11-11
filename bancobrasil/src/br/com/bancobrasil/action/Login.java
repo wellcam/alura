@@ -15,6 +15,7 @@ public class Login implements Action {
 	@Override
 	public String executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession sessao = request.getSession();
 		UsuarioDAO usuarioDao = new UsuarioDAO();
 		System.out.println("Login");
 		String login = request.getParameter("login");
@@ -23,10 +24,10 @@ public class Login implements Action {
 		Usuario usuario = usuarioDao.existe(login, password);
 		
 		if (usuario != null) {
-			HttpSession sessao = request.getSession();
 			sessao.setAttribute("usuario", usuario);
 			return "redirect:/bancobrasil/in?acao=Home";
 		} else {
+			request.setAttribute("incorreto", true);
 			return "redirect:/bancobrasil/in?acao=FormLogin";
 		}
 		

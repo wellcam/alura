@@ -1,6 +1,7 @@
 package br.com.bancobrasil.action;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -23,9 +24,13 @@ public class EditarCliente implements Action{
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		
 		Cliente cliente = clienteDao.editar(id);
+		Calendar data = cliente.getDataNascimento();
 		
 		request.setAttribute("cliente", cliente);
 		request.setAttribute("profissoes", profissoes);
+		request.setAttribute("dia", data.get(Calendar.DAY_OF_MONTH));
+		request.setAttribute("mes", data.get(Calendar.MONTH));
+		request.setAttribute("ano", data.get(Calendar.YEAR));
 		
 		return "forward:formEditarCliente.jsp";
 	}

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -16,12 +17,17 @@
         <div class="mx-auto col-md-6 col-10 bg-white p-5">
           <h1 class="mb-4">Log in</h1>
           <form action="/bancobrasil/in?acao=Login" method="post">
+			<c:if test="${incorreto == true}">
+				<span class="btn text-white" style="background:#cc2127">Usuario ou senha incorreto</span>
+			</c:if>
             <div class="form-group"> <input type="text" class="form-control" placeholder="Usuario" name ="login" id="form9"> </div>
+            <c:if test="${incorreto == true}">
+            	<span class="btn text-white"style="background:#cc2127">Usuario ou senha incorreto</span>
+            </c:if>
             <div class="form-group mb-3"> <input type="password" class="form-control" placeholder="Senha"  name ="password" id="form10"> <small class="form-text text-muted text-right">
                 <a href="/bancobrasil/in?acao=FormUsuario"> Cadastrar novo usuario</a>	|	
                 <a href="#">Recuperar senha</a>
               </small> </div> <button type="submit" class="btn btn-primary">Entrar</button>
-              <div class="col-md-12"><a class="btn btn-primary" href="#" >-</a></div>
           </form>
         </div>
       </div>

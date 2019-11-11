@@ -34,7 +34,7 @@
   <div class="py-5 text-center">
     <div class="container">
       <div class="row">
-        <div class="mx-auto col-md-12 fade show active" role="tabpanel" data-toggle="pill" id="tabone">
+        <div class="mx-auto col-md-12 fade show active" role="tabpanel" id="tabone">
           <h1 class="mb-4">O que deseja fazer?</h1>
           <a class="btn btn-outline-primary" href="/bancobrasil/in?acao=FormCliente">Cadastrar Novo Cliente</a>
           <a class="btn btn-outline-primary" href="/bancobrasil/in?acao=ListarClientes">Listar Clientes</a>
@@ -45,7 +45,7 @@
   <div class="py-5 text-center">
     <div class="container">
       <div class="row">
-        <div class="mx-auto col-md-12 fade" role="tabpanel" data-toggle="pill" id="tabtwo">
+        <div class="mx-auto col-md-12 fade" role="tabpanel" id="tabtwo">
           <h1 class="mb-4">O que deseja fazer?</h1>
           <a class="btn btn-outline-primary" href="/bancobrasil/in?acao=FormCategoria">Cadastrar Nova Categoria</a>
           <a class="btn btn-outline-primary" href="/bancobrasil/in?acao=ListarCategorias">Listar Categorias</a>
@@ -56,7 +56,7 @@
   <div class="py-5 text-center">
     <div class="container">
       <div class="row">
-        <div class="mx-auto col-md-12 fade" role="tabpanel" data-toggle="pill" id="tabthree">
+        <div class="mx-auto col-md-12 fade" role="tabpanel" id="tabthree">
           <h1 class="mb-4">O que deseja fazer?</h1>
           <a class="btn btn-outline-primary" href="/bancobrasil/in?acao=FormProfissao">Cadastrar Nova Profissão</a>
           <a class="btn btn-outline-primary" href="/bancobrasil/in?acao=ListarProfissoes">Listar Profissões</a>

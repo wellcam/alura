@@ -1,6 +1,7 @@
 package br.com.bancobrasil.action;
 
 import java.io.IOException;
+import java.util.GregorianCalendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -28,10 +29,14 @@ public class SalvarCliente implements Action {
 		Usuario usuario = (Usuario) sessao.getAttribute("usuario");
 		Integer idProfissao = Integer.parseInt(request.getParameter("profissao"));
 		Profissao profissao = profissaoDao.buscarPorId(idProfissao);
+		
+		Integer dia = Integer.parseInt(request.getParameter("dia"));
+		Integer mes = Integer.parseInt(request.getParameter("mes"));
+		Integer ano = Integer.parseInt(request.getParameter("ano"));
 				
 		cliente.setUsuario(usuario);
 		cliente.setNome(request.getParameter("nome"));
-//		cliente.setDataNascimento(request.getParameter("dataNascimento"));
+		cliente.setDataNascimento(new GregorianCalendar(ano,mes,dia));
 		cliente.setProfissao(profissao);
 		
 		clienteDao.salvar(cliente);

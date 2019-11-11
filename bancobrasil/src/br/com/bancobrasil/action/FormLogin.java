@@ -16,7 +16,11 @@ public class FormLogin implements Action {
 	public String executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		return "redirect:login.jsp";
+		String incorreto = request.getParameter("incorreto");
+		if(incorreto != null) {
+			request.setAttribute("incorreto", true);
+		}
+		return "forward:login.jsp";
 	}
 
 }
