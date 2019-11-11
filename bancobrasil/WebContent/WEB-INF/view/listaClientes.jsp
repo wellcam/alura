@@ -6,18 +6,19 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Banco Brasil | Lista de Profissões</title>
+  <title>Banco Brasil | Lista de Clientes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
 </head>
 
 <body>
+	<c:import url="header-template.jsp"></c:import>
   <div class="py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="mb-4" >Lista de Profissões</h1>
+          <h1 class="mb-4" >Lista de Clientes</h1>
         </div>
       </div>
     </div>
@@ -31,18 +32,19 @@
               <thead class="thead-dark">
                 <tr>
                   <th>#</th>
-                  <th>Cargo</th>
-                  <th>Categoria</th>
+                  <th>Nome</th>
+                  <th>Profissão</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-				<c:forEach items="${profissoes}" var="profissao">
+              	<c:forEach items="${clientes}" var="cliente">
 					<tr>
 						<th>1</th>
-						<td>${profissao.nome}</td>
-						<td>${profissao.categoria.nome}</td>
-						<td><a class="btn text-white" href="/bancobrasil/in?acao=ExcluirProfissao&id=${profissao.id}" style="background:#cc2127" target="_blank" >Excluir</a></td>
+						<td>${cliente.nome}</td>
+						<td>${cliente.profissao.nome}</td>
+						<td><a class="btn text-white" href="/bancobrasil/in?acao=EditarCliente&id=${cliente.id}" style="background:#3b5998" target="_blank" >Editar</a>
+						<a class="btn text-white" href="/bancobrasil/in?acao=ExcluirCliente&id=${cliente.id}" style="background:#cc2127" target="_blank" >Excluir</a></td>
 					</tr>
 				</c:forEach>
               </tbody>

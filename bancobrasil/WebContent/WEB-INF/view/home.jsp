@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -9,15 +10,7 @@
 </head>
 
 <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="nav nav-pills">
-            <div class="form-group"></div>Login: ${usuario.login}</div>
-            <div class="form-group"><a href="/bancobrasil/in?acao=Logout" >Logout</a></div>
-          </div>
-        </div>
-      </div>
+	<c:import url="header-template.jsp"></c:import>
   <div class="py-5">
     <div class="container">
       <div class="row">

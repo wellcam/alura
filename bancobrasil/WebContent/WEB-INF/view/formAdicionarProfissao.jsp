@@ -6,49 +6,29 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Banco Brasil | Cadastro de Cliente</title>
+  <title>Banco Brasil | Cadastro de Profissao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
 </head>
 
 <body>
+	<c:import url="header-template.jsp"></c:import>
   <div class="py-5 text-center" style="background-image: url('https://static.pingendo.com/cover-bubble-dark.svg');background-size:cover;">
     <div class="container">
       <div class="row">
         <div class="mx-auto col-md-6 col-10 bg-white p-5">
-          <h1 class="mb-4">Cadastro de Cliente</h1>
-          <form action="/bancobrasil/in?acao=AdicionarCliente" method="post">
+          <h1 class="mb-4">Cadastro de Profissao</h1>
+          <form action="/bancobrasil/in?acao=AdicionarProfissao" method="post">
             <div class="form-group"><h5 > <b>Nome</b> </h5> <input type="text" class="form-control" placeholder="Nome" name ="nome" id="form9"> </div>
             <div class="form-group">
-            	<h5 > <b>Profissão</b> </h5>
-				<select class="form-control" name="profissao">
-					<option value="">-- Selecione uma profissao --</option>
-					<c:forEach items="${profissoes}" var="profissao">
-				    	<option value="${profissao.id}">${profissao.nome}</option>
+            	<h5 > <b>Categoria</b> </h5>
+				<select class="form-control" name="categoria">
+						<option value="">-- Selecione uma categoria --</option>
+					<c:forEach items="${categorias}" var="categoria">
+				    	<option value="${categoria.id}">${categoria.nome}</option>
 				    </c:forEach>
 				</select>
-            </div>
-            <div class="form-group">
-            <h5 > <b>Nascimento</b> </h5>
-			<select class="form-control" name="dia">
-				<option value="">-- Dia --</option>
-				<c:forEach var="i" begin="1" end="31" step="1" >
-			    	<option value="${i}">${i}</option>
-				</c:forEach>
-			</select>
-			<select class="form-control" name="mes">
-				<option value="">-- Mês --</option>
-				<c:forEach var="i" begin="1" end="12" step="1" >
-			    	<option value="${i}">${i}</option>
-				</c:forEach>
-			</select>
-			<select class="form-control" name="ano">
-				<option value="">-- Ano --</option>
-				<c:forEach var="i" begin="1930" end="2015" step="1" >
-			    	<option value="${i}">${i}</option>
-				</c:forEach>
-			</select>
             </div>
             <div><button type="submit" class="btn btn-primary">Cadastrar</button></div>
           </form>

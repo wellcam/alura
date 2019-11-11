@@ -13,6 +13,7 @@
 </head>
 
 <body>
+	<c:import url="header-template.jsp"></c:import>
   <div class="py-5">
     <div class="container">
       <div class="row">
