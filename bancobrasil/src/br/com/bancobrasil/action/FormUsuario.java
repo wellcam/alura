@@ -11,7 +11,7 @@ public class FormUsuario implements Action{
 	@Override
 	public String executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "redirect:formAdicionarUsuario.jsp";
+		return "forward:formAdicionarUsuario.jsp";
 	}
 
 	

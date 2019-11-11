@@ -19,8 +19,6 @@ public class Conection {
 		
 		Cliente cliente = new Cliente();
 		cliente.setNome("Wellington Camilo");
-		cliente.setIdade(23);
-		cliente.setDataNascimento("26/12/1995");
 //		cliente.setProfissao("Programador");
 		
 		

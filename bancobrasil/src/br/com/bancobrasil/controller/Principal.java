@@ -20,6 +20,7 @@ public class Principal extends HttpServlet {
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final String PACKAGE_NAME = "br.com.bancobrasil.action.";
+		final String WEB_PATH = "/WEB-INF/view/";
 		String parametroAcao = request.getParameter("acao");
 		final String fqn = PACKAGE_NAME + parametroAcao;
 		String redirect = null;
@@ -34,7 +35,7 @@ public class Principal extends HttpServlet {
 		String [] prefix = redirect.split(":");
 		
 		if(prefix[0].equals("forward")) {
-			RequestDispatcher rd = request.getRequestDispatcher(prefix[1]);
+			RequestDispatcher rd = request.getRequestDispatcher(WEB_PATH + prefix[1]);
 			rd.forward(request, response);
 		} else {
 			response.sendRedirect(prefix[1]);

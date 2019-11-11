@@ -17,7 +17,6 @@ public class Login implements Action {
 			throws ServletException, IOException {
 		HttpSession sessao = request.getSession();
 		UsuarioDAO usuarioDao = new UsuarioDAO();
-		System.out.println("Login");
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
 		

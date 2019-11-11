@@ -36,7 +36,7 @@ public class AutenticacaoFilter implements Filter{
 		boolean pageNeedLogon = !(acao.equals("Login") || acao.equals("FormLogin") || acao.equals("FormUsuario") || acao.equals("AdicionarUsuario")); 
 		
 		if(pageNeedLogon && usuarioNaoLogado) {
-			response.sendRedirect("/bancobrasil/in?acao=FormLogin");
+			response.sendRedirect("in?acao=FormLogin");
 			return;
 		}
 		

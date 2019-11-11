@@ -12,7 +12,7 @@ public class FormCategoria implements Action{
 	public String executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		return "redirect:formAdicionarCategoria.jsp";
+		return "forward:formAdicionarCategoria.jsp";
 	}
 
 }

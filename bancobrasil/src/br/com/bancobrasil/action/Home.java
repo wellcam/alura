@@ -11,7 +11,7 @@ public class Home implements Action{
 	@Override
 	public String executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "redirect:home.jsp";
+		return "forward:home.jsp";
 	}
 
 }
