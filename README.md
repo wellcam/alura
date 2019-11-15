@@ -14,5 +14,8 @@ Exercicios Alura
 -Exercicios JPA/Hibernate parte 2: projeto-jpa-2
 
 -Projeto pessoa: bancobrasil
-
+    JPA-Hibernate
+    MySQL
+    Servlets
+    JSP
 
