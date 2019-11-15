@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 
 import br.com.bancobrasil.conexao.JPAUtil;
 import br.com.bancobrasil.model.Profissao;
@@ -21,12 +24,20 @@ public class ProfissaoDAO {
 	}
 
 	public List<Profissao> listar() {
-		String jpql = "SELECT p FROM Profissao p";
-		em.getTransaction().begin();
+		/*QUERY COM JPQL*/
+//		String jpql = "SELECT p FROM Profissao p";
+//		em.getTransaction().begin();
+//		Query query = em.createQuery(jpql);
+//		return query.getResultList();
 		
-		Query query = em.createQuery(jpql);
+		/*CRITERIA QUERY*/
+		CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+		CriteriaQuery<Profissao> query = criteriaBuilder.createQuery(Profissao.class);
+		query.from(Profissao.class);
 		
-		return query.getResultList();
+		TypedQuery<Profissao> typed = em.createQuery(query);
+		return typed.getResultList();
+		
 	}
 
 	public void excluir(Integer id) {

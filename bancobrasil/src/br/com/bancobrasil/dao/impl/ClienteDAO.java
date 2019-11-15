@@ -2,8 +2,12 @@ package br.com.bancobrasil.dao.impl;
 
 import java.util.List;
 
-import javax.persistence.Query;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 
 import br.com.bancobrasil.conexao.JPAUtil;
 import br.com.bancobrasil.model.Cliente;
@@ -23,13 +27,26 @@ public class ClienteDAO {
 	}
 
 	public List<Cliente> listar(Usuario usuario) {
-		String jpql = "SELECT c FROM Cliente c WHERE c.usuario = :pUsuario";
-		em.getTransaction().begin();
+		/*QUERY COM JPQL*/
+//		String jpql = "SELECT c FROM Cliente c WHERE c.usuario = :pUsuario";
+//		em.getTransaction().begin();
+//		Query query = em.createQuery(jpql);
+//		query.setParameter("pUsuario", usuario);
+//		return query.getResultList();
 		
-		Query query = em.createQuery(jpql);
-		query.setParameter("pUsuario", usuario);
+		/*CRITERIA QUERY*/
+		CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+		CriteriaQuery<Cliente> query = criteriaBuilder.createQuery(Cliente.class);
+		Root<Cliente> root = query.from(Cliente.class);
+		Root<Usuario> usuarioPath = (Root<Usuario>) root.<Usuario>get("usuario");
 		
-		return query.getResultList();
+		Predicate usuarioIgual = criteriaBuilder.equal(usuarioPath, usuario);
+		
+		query.where(usuarioIgual);
+		
+		TypedQuery<Cliente> typed = em.createQuery(query);
+		return typed.getResultList();
+		
 	}
 
 	public void excluir(Integer id) {
