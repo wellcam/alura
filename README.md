@@ -10,3 +10,12 @@ Exercicios Alura
 -Exercicios JDBC: loja-virtual
 
 -Exercicios JPA/Hibernate: contas-jpa | contas-jdbc
+
+-Exercicios JPA/Hibernate parte 2: projeto-jpa-2
+
+-Projeto pessoa: bancobrasil
+    JPA-Hibernate
+    MySQL
+    Servlets
+    JSP
+
