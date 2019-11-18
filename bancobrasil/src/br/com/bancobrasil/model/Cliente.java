@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Version;
 
 @Entity
 public class Cliente {
@@ -27,6 +28,17 @@ public class Cliente {
 	@ManyToOne
 	private Usuario usuario;
 	
+	@Version
+	private Integer version;
+	
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+
 	public Usuario getUsuario() {
 		return usuario;
 	}

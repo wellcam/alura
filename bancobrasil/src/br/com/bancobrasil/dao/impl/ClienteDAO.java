@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
@@ -34,11 +35,11 @@ public class ClienteDAO {
 //		query.setParameter("pUsuario", usuario);
 //		return query.getResultList();
 		
-		/*CRITERIA QUERY*/
+		/*CRITERIA QUERY*/ //ANALISAR NOVAMENTE, ESTÁ DANDO ERRO
 		CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
 		CriteriaQuery<Cliente> query = criteriaBuilder.createQuery(Cliente.class);
 		Root<Cliente> root = query.from(Cliente.class);
-		Root<Usuario> usuarioPath = (Root<Usuario>) root.<Usuario>get("usuario");
+		Path<Usuario> usuarioPath = root.<Usuario>get("usuario");
 		
 		Predicate usuarioIgual = criteriaBuilder.equal(usuarioPath, usuario);
 		
@@ -77,6 +78,12 @@ public class ClienteDAO {
 		
 		em.getTransaction().commit();
 		em.close();
+//		if(cliente.getId() != null) {
+//			em.getTransaction().begin();
+//			em.merge(cliente);
+//			em.getTransaction().commit();
+//			em.close();
+//		}
 		
 	}
 

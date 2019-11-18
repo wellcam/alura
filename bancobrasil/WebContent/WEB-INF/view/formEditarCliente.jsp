@@ -20,6 +20,8 @@
         <div class="mx-auto col-md-6 col-10 bg-white p-5">
           <h1 class="mb-4">Atualizar de Cliente</h1>
           <form action="/bancobrasil/in?acao=SalvarCliente" method="post">
+          <input type="hidden" name="version" value="${cliente.version}"/>
+          <input type="hidden" name="clienteId" value="${cliente.id}"/>
             <div class="form-group"><h5 > <b>Nome</b> </h5> <input type="text" class="form-control" placeholder="Nome" value="${cliente.nome}"name ="nome" id="form9"> </div>
             <div class="form-group">
             	<h5 > <b>Profissão</b> </h5>

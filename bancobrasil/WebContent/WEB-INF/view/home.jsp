@@ -10,6 +10,7 @@
 </head>
 
 <body>
+	<title>Banco Brasil | Home Page</title>
 	<c:import url="header-template.jsp"></c:import>
   <div class="py-5">
     <div class="container">

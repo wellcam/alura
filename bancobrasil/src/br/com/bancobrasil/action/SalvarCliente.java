@@ -24,17 +24,17 @@ public class SalvarCliente implements Action {
 		ClienteDAO clienteDao = new ClienteDAO();
 		Cliente cliente = new Cliente();
 		
-		
 		HttpSession sessao = request.getSession();
 		Usuario usuario = (Usuario) sessao.getAttribute("usuario");
 		Integer idProfissao = Integer.parseInt(request.getParameter("profissao"));
 		Profissao profissao = profissaoDao.buscarPorId(idProfissao);
-		
+		Integer clienteId = Integer.parseInt(request.getParameter("clienteId"));
 		Integer dia = Integer.parseInt(request.getParameter("dia"));
 		Integer mes = Integer.parseInt(request.getParameter("mes"));
 		Integer ano = Integer.parseInt(request.getParameter("ano"));
 				
 		cliente.setUsuario(usuario);
+		cliente.setId(clienteId);
 		cliente.setNome(request.getParameter("nome"));
 		cliente.setDataNascimento(new GregorianCalendar(ano,mes,dia));
 		cliente.setProfissao(profissao);
