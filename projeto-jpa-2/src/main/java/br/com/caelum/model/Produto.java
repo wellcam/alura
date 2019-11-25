@@ -11,12 +11,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
+@Cache(usage=CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Produto {
 
 	@Id
@@ -34,6 +38,10 @@ public class Produto {
 	@Min(20)
 	private double preco;
 	
+//	Quando configuramos o cache para a entidade Produto não dissemos que queríamos 
+//	cachear também suas associações. Assim, podemos passar para o Hibernate que desejamos 
+//	armazenar também as categorias de cada produto anotando o seu relacionamento
+	@Cache(usage=CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 	@ManyToMany
 	private List<Categoria> categorias = new ArrayList<Categoria>();
 
@@ -41,7 +49,18 @@ public class Produto {
 	@ManyToOne
 	private Loja loja;
 	
+	@Version
+	private int versao;
 	
+	
+	public int getVersao() {
+		return versao;
+	}
+
+	public void setVersao(int versao) {
+		this.versao = versao;
+	}
+
 	public String getDescricao() {
 		return descricao;
 	}

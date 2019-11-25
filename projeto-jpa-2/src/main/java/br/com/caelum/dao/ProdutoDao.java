@@ -64,31 +64,29 @@ public class ProdutoDao {
 	}
 	
   /*FORMA SEM CRITERIA, CONCATENANDO STRINGS. NAO PERFORMATICA E DE DIFICIL MANUTENÇÃO*/
-//	public List<Produto> getProdutos (String nome, Integer categoriaId, Integer lojaId){
-//		String jpql = "SELECT p FROM Produto p ";
-//		
-//		if(categoriaId != null) {
-//			jpql += "JOIN FETCH p.categorias c WHERE c.id = :pCategoriaId AND ";
-//		} else {
-//			jpql += " WHERE ";
-//		}
-//		if(lojaId != null) {
-//			jpql += "p.loja.id = :pLojaId AND ";
-//		}
-//		if(!nome.isEmpty()) {
-//			jpql += "p.nome LIKE :pProdutoNome AND ";
-//		}
-//		
-//		jpql += "1 = 1";
-//		
-//		TypedQuery<Produto> query = em.createQuery(jpql, Produto.class);
-//		
-//		query.setParameter("pProdutoNome", nome);
-//		query.setParameter("pCategoriaId", categoriaId);
-//		query.setParameter("pLojaId", lojaId);
-//		
-//		return query.getResultList();
-//	}
+	public List<Produto> getProdutos (String nome, Integer categoriaId, Integer lojaId){
+		String jpql = "SELECT p FROM Produto p ";
+		
+		if(categoriaId != null) {
+			jpql += "JOIN FETCH p.categorias c WHERE c.id = :pCategoriaId ";
+		} else {
+			jpql += " WHERE 1 = 1";
+		}
+		if(lojaId != null) {
+			jpql += "AND p.loja.id = :pLojaId ";
+		}
+		if(!nome.isEmpty()) {
+			jpql += "AND p.nome LIKE :pProdutoNome ";
+		}
+		
+		TypedQuery<Produto> query = em.createQuery(jpql, Produto.class);
+		
+		query.setParameter("pProdutoNome", nome);
+		query.setParameter("pCategoriaId", categoriaId);
+		query.setParameter("pLojaId", lojaId);
+		
+		return query.getResultList();
+	}
 	
 
 	public void insere(Produto produto) {

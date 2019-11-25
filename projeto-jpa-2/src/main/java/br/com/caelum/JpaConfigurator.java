@@ -48,6 +48,7 @@ public class JpaConfigurator {
 	    dataSource.setMinPoolSize(3); //Minimo de conexões
 	    dataSource.setMaxPoolSize(5); //Maximo de conexões | Padrão 15
 	    dataSource.setNumHelperThreads(15); //Distribuição de threads
+	    dataSource.setIdleConnectionTestPeriod(1); //a cada um segundo testamos as conexões ociosas
 	    
 	    
 	    return dataSource;
@@ -75,7 +76,9 @@ public class JpaConfigurator {
 		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
 		props.setProperty("hibernate.show_sql", "true");
 		props.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-
+		props.setProperty("hibernate.cache.use_second_level_cache", "true");//Realizar cache de 2 nivel
+		props.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory");//Realizar cache de queries
+		 
 		entityManagerFactory.setJpaProperties(props);
 		return entityManagerFactory;
 	}
