@@ -7,6 +7,6 @@
 <title>Livros de Java, Android, Iphone, Ruby, PHP e muito mais - Casa do Codigo</title>
 </head>
 <body>
-	<h1>Casa do Codigo</h1>
+	<h1>Produto cadastrado com sucesso</h1>
 </body>
 </html>
