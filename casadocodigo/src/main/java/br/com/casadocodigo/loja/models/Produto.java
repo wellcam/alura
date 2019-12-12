@@ -49,7 +49,11 @@ public class Produto {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	
+	public List<Preco> getPrecos() {
+		return precos;
+	}
+	public void setPrecos(List<Preco> precos) {
+		this.precos = precos;
+	}
 	
 }
