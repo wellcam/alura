@@ -24,7 +24,7 @@ public class ProdutoValidator implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "descricao", "field.required");
 		
 		Produto produto = (Produto) target;
-		if(produto.getPaginas() <= 0 || produto.getPaginas() == null) {
+		if(/*produto.getPaginas() <= 0 ||*/ produto.getPaginas() == null) {
 			errors.rejectValue("paginas", "field.required");
 		}
 	}

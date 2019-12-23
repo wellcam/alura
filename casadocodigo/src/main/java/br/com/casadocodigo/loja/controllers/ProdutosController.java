@@ -18,6 +18,7 @@ import br.com.casadocodigo.loja.models.Produto;
 import br.com.casadocodigo.loja.validators.ProdutoValidator;
 
 @Controller
+@RequestMapping(value = "/produtos")
 public class ProdutosController {
 	
 	@Autowired
@@ -28,14 +29,14 @@ public class ProdutosController {
 		binder.addValidators(new ProdutoValidator());
 	}
 	
-	@RequestMapping("produtos/form")
+	@RequestMapping("form")
 	public ModelAndView form() {
 		ModelAndView model = new ModelAndView("produtos/form");
 		model.addObject("tipos", TipoPreco.values());
 		return model;
 	}
 
-	@RequestMapping(value = "/produtos", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView cadastrar(@Valid Produto produto, BindingResult result, RedirectAttributes redirectAttributes) {
 		
 		if(result.hasErrors()) {
@@ -44,12 +45,12 @@ public class ProdutosController {
 		
 		produtoDao.cadastrar(produto);
 		ModelAndView model = new ModelAndView("redirect:produtos");
-//		Flash Scoped - Atributos que duram de uma requisicao a outra
+//		Flash Scoped - Atributos que duram apenas de uma requisicao a outra
 		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso");
 		return model;
 	}
 	
-	@RequestMapping(value = "/produtos", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView listar(){
 		ModelAndView model = new ModelAndView("produtos/lista");
 		model.addObject("produtos", produtoDao.listar());
