@@ -27,6 +27,14 @@ public class Produto {
 	@DateTimeFormat
 	private Calendar dataLacamento;
 	
+    private String sumarioPath;
+
+    public String getSumarioPath() {
+        return sumarioPath;
+    }
+    public void setSumarioPath(String sumarioPath) {
+        this.sumarioPath = sumarioPath;
+    }	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -44,10 +52,6 @@ public class Produto {
 	}
 	public void setPaginas(Integer paginas) {
 		this.paginas = paginas;
-	}
-	@Override
-	public String toString() {
-		return "Produto [titulo=" + titulo + ", descricao=" + descricao + ", paginas=" + paginas + "]";
 	}
 	public Integer getId() {
 		return id;
@@ -67,5 +71,8 @@ public class Produto {
 	public void setDataLacamento(Calendar dataLacamento) {
 		this.dataLacamento = dataLacamento;
 	}
-	
+	@Override
+	public String toString() {
+		return "Produto [titulo=" + titulo + ", descricao=" + descricao + ", paginas=" + paginas + "]";
+	}	
 }
