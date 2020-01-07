@@ -33,9 +33,9 @@
 		</div>
 		<div>
 			<label>Data de lançamento</label>
-<!-- 			<input type="text" name="dataLacamento"> -->
-			<form:input path="dataLacamento"/>
-			<form:errors path="dataLacamento"></form:errors>
+<!-- 			<input type="text" name="dataLancamento"> -->
+			<form:input path="dataLancamento"/>
+			<form:errors path="dataLancamento"></form:errors>
 		</div>
 		<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
 			<div>

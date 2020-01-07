@@ -25,7 +25,7 @@ public class Produto {
 	private List<Preco> precos; 
 	
 	@DateTimeFormat
-	private Calendar dataLacamento;
+	private Calendar dataLancamento;
 	
     private String sumarioPath;
 
@@ -65,11 +65,11 @@ public class Produto {
 	public void setPrecos(List<Preco> precos) {
 		this.precos = precos;
 	}
-	public Calendar getDataLacamento() {
-		return dataLacamento;
+	public Calendar getDataLancamento() {
+		return dataLancamento;
 	}
-	public void setDataLacamento(Calendar dataLacamento) {
-		this.dataLacamento = dataLacamento;
+	public void setDataLancamento(Calendar dataLancamento) {
+		this.dataLancamento = dataLancamento;
 	}
 	@Override
 	public String toString() {
